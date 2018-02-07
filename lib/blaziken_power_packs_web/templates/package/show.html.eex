@@ -1,0 +1,38 @@
+<h2>Show Package</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @package.name %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @package.price %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @package.description %>
+  </li>
+
+  <li>
+    <strong>Image url:</strong>
+    <%= @package.image_url %>
+  </li>
+
+  <li>
+    <strong>Days:</strong>
+    <%= @package.days %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @package.status %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: package_path(@conn, :edit, @package) %></span>
+<span><%= link "Back", to: package_path(@conn, :index) %></span>
