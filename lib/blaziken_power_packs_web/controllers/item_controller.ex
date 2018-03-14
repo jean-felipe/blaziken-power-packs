@@ -10,8 +10,10 @@ defmodule BlazikenPowerPacksWeb.ItemController do
   end
 
   def new(conn, _params) do
+    item_types = ["seeds", "little_plant"]
+    item_status = ["active", "inactive"]
     changeset = Items.change_item(%Item{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, types: item_types, status: item_status)
   end
 
   def create(conn, %{"item" => item_params}) do
