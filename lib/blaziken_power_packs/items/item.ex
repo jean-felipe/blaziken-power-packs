@@ -7,10 +7,10 @@ defmodule BlazikenPowerPacks.Items.Item do
   schema "items" do
     field :description, :string
     field :image_url, :string
-    field :item_type, :integer
+    field :item_type, ItemTypeEnum
     field :name, :string
     field :price, :decimal
-    field :status, :integer
+    field :status, GeneralStatusEnum
     field :supplier_id, :integer
 
     timestamps()

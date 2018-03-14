@@ -10,8 +10,10 @@ defmodule BlazikenPowerPacksWeb.PackageController do
   end
 
   def new(conn, _params) do
+    days = ["weekly", "biweekly", "monthly"]
+    status = ["active", "inactive"]
     changeset = Packs.change_package(%Package{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, days: days, status: status)
   end
 
   def create(conn, %{"package" => package_params}) do

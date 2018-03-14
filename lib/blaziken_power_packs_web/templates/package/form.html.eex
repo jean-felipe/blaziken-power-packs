@@ -31,13 +31,13 @@
 
   <div class="form-group">
     <%= label f, :days, class: "control-label" %>
-    <%= number_input f, :days, class: "form-control" %>
+    <%= select f, :days, @days, class: "form-control" %>
     <%= error_tag f, :days %>
   </div>
 
   <div class="form-group">
     <%= label f, :status, class: "control-label" %>
-    <%= number_input f, :status, class: "form-control" %>
+    <%= select f, :status, @status, class: "form-control" %>
     <%= error_tag f, :status %>
   </div>
 

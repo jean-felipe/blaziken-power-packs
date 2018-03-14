@@ -5,12 +5,12 @@ defmodule BlazikenPowerPacks.Packs.Package do
 
 
   schema "packages" do
-    field :days, :integer
+    field :days, PackageDaysEnum
     field :description, :string
     field :image_url, :string
     field :name, :string
     field :price, :decimal
-    field :status, :integer
+    field :status, GeneralStatusEnum
 
     timestamps()
   end
