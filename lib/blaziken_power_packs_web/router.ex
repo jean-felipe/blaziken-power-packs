@@ -19,6 +19,7 @@ defmodule BlazikenPowerPacksWeb.Router do
     get "/", PageController, :index
     resources "/items", ItemController
     resources "/packages", PackageController
+    resources "/users", UserController
   end
 
   # Other scopes may use custom stacks.

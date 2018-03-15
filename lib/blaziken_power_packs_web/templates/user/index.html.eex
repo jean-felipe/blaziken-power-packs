@@ -1,0 +1,50 @@
+<h2>Listing Users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Password hash</th>
+      <th>Gender</th>
+      <th>Status</th>
+      <th>Street</th>
+      <th>Street number</th>
+      <th>Zipcode</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Neighborhood</th>
+      <th>Cpf</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.password_hash %></td>
+      <td><%= user.gender %></td>
+      <td><%= user.status %></td>
+      <td><%= user.street %></td>
+      <td><%= user.street_number %></td>
+      <td><%= user.zipcode %></td>
+      <td><%= user.city %></td>
+      <td><%= user.state %></td>
+      <td><%= user.neighborhood %></td>
+      <td><%= user.cpf %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New User", to: user_path(@conn, :new) %></span>
